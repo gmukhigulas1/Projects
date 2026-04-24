@@ -1,0 +1,439 @@
+2025-08-10 23:25:29,773 - INFO - ==================================================
+2025-08-10 23:25:29,773 - INFO - Starting Enhanced Macro-Financial VAR Pipeline
+2025-08-10 23:25:29,773 - INFO - ==================================================
+2025-08-10 23:25:29,773 - INFO - Step 1: Fetching macro data from FRED...
+2025-08-10 23:25:31,224 - INFO - Fetched CPI (CPIAUCSL) rows=426
+2025-08-10 23:25:31,940 - INFO - Fetched CoreCPI (CPILFESL) rows=426
+2025-08-10 23:25:32,640 - INFO - Fetched PCE (PCEPI) rows=426
+2025-08-10 23:25:33,268 - INFO - Fetched CorePCE (PCEPILFE) rows=426
+2025-08-10 23:25:34,690 - INFO - Fetched BreakevenInfl_5Y (T5YIE) rows=5897
+2025-08-10 23:25:36,188 - INFO - Fetched BreakevenInfl_10Y (T10YIE) rows=5897
+2025-08-10 23:25:36,728 - INFO - Fetched GDP (GDPC1) rows=142
+2025-08-10 23:25:37,305 - INFO - Fetched GDPNow (GDPNOW) rows=57
+2025-08-10 23:25:38,126 - INFO - Fetched IndustrialProd (INDPRO) rows=426
+2025-08-10 23:25:38,782 - INFO - Fetched CapacityUtil (TCU) rows=426
+2025-08-10 23:25:39,391 - INFO - Fetched RetailSales (RSAFS) rows=402
+2025-08-10 23:25:40,056 - INFO - Fetched PersonalIncome (PI) rows=426
+2025-08-10 23:25:40,781 - INFO - Fetched PersonalConsumption (PCE) rows=426
+2025-08-10 23:25:41,501 - INFO - Fetched Unemp (UNRATE) rows=427
+2025-08-10 23:25:42,130 - INFO - Fetched Payrolls (PAYEMS) rows=427
+2025-08-10 23:25:43,087 - INFO - Fetched InitialClaims (ICSA) rows=1857
+2025-08-10 23:25:44,140 - INFO - Fetched ContinuingClaims (CCSA) rows=1856
+2025-08-10 23:25:44,771 - INFO - Fetched LaborForcePartic (CIVPART) rows=427
+2025-08-10 23:25:45,280 - INFO - Fetched AvgHourlyEarnings (CES0500000003) rows=233
+2025-08-10 23:25:45,921 - INFO - Fetched JOLTS (JTSJOL) rows=295
+2025-08-10 23:25:46,575 - INFO - Fetched HousingStarts (HOUST) rows=426
+2025-08-10 23:25:47,208 - INFO - Fetched BuildingPermits (PERMIT) rows=426
+2025-08-10 23:25:47,663 - INFO - Fetched ExistingHomeSales (EXHOSLUSM495S) rows=14
+2025-08-10 23:25:48,288 - INFO - Fetched CaseShiller (CSUSHPISA) rows=425
+2025-08-10 23:25:48,930 - INFO - Fetched M2 (M2SL) rows=426
+2025-08-10 23:25:49,897 - INFO - Fetched CommercialBankCredit (TOTBKCR) rows=1857
+2025-08-10 23:25:50,556 - INFO - Fetched ConsumerCredit (TOTALSL) rows=426
+2025-08-10 23:25:52,546 - INFO - Fetched FEDFUNDS (DFF) rows=13003
+2025-08-10 23:25:54,308 - INFO - Fetched DGS3MO (DGS3MO) rows=9289
+2025-08-10 23:25:56,087 - INFO - Fetched DGS2 (DGS2) rows=9289
+2025-08-10 23:25:57,866 - INFO - Fetched DGS5 (DGS5) rows=9289
+2025-08-10 23:25:59,847 - INFO - Fetched DGS10 (DGS10) rows=9289
+2025-08-10 23:26:01,822 - INFO - Fetched DGS30 (DGS30) rows=9289
+2025-08-10 23:26:03,603 - INFO - Fetched TIPS10 (DFII10) rows=5896
+2025-08-10 23:26:05,261 - INFO - Fetched AAA_spread (BAMLC0A0CM) rows=7559
+2025-08-10 23:26:06,855 - INFO - Fetched BBB_spread (BAMLC0A4CBBB) rows=7559
+2025-08-10 23:26:08,511 - INFO - Fetched HY_spread (BAMLH0A0HYM2) rows=7559
+2025-08-10 23:26:10,394 - INFO - Fetched TED_spread (TEDRATE) rows=8365
+2025-08-10 23:26:12,262 - INFO - Fetched VIX (VIXCLS) rows=9288
+2025-08-10 23:26:12,849 - INFO - Fetched ConsumerSentiment (UMCSENT) rows=426
+2025-08-10 23:26:13,468 - INFO - Fetched PMI_Manufacturing (MANEMP) rows=427
+2025-08-10 23:26:14,857 - INFO - Fetched DXY (DTWEXBGS) rows=5110
+2025-08-10 23:26:16,623 - INFO - Fetched WTI (DCOILWTICO) rows=9286
+2025-08-10 23:26:17,068 - WARNING - Failed to fetch Gold (GOLDAMGBD228NLBM): Bad Request.  The series does not exist.
+2025-08-10 23:26:17,247 - WARNING - Failed to fetch: ['Gold']
+2025-08-10 23:26:17,247 - INFO - Step 2: Fetching market data...
+2025-08-10 23:26:19,377 - INFO - Step 3: Engineering features...
+2025-08-10 23:26:19,489 - INFO - Step 4: Extracting dynamic factors...
+2025-08-10 23:26:19,566 - INFO - Step 5: Preparing VAR dataset...
+2025-08-10 23:26:19,569 - INFO - Step 6: Fitting VAR models...
+2025-08-10 23:26:19,574 - INFO - Using Bayesian VAR with Minnesota prior...
+2025-08-10 23:26:19,578 - ERROR - Pipeline failed: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 689 is different from 53)
+Traceback (most recent call last):
+  File "C:\Users\GegaMukhigulashvili\AppData\Local\Temp\ipykernel_7996\4290608769.py", line 11, in main
+    results = pipeline.run()
+              ^^^^^^^^^^^^^^
+  File "C:\Users\GegaMukhigulashvili\AppData\Local\Temp\ipykernel_7996\1003188023.py", line 99, in run
+    var_res = var_model.fit(var_df.values)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GegaMukhigulashvili\AppData\Local\Temp\ipykernel_7996\1582237399.py", line 48, in fit
+    Bpost = Vpost @ (V0_inv @ B0.flatten() + X.T @ Yt.flatten())
+                     ~~~~~~~^~~~~~~~~~~~~~
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 689 is different from 53)
+2025-08-10 23:29:53,959 - INFO - ==================================================
+2025-08-10 23:29:53,966 - INFO - Starting Enhanced Macro-Financial VAR Pipeline
+2025-08-10 23:29:53,966 - INFO - ==================================================
+2025-08-10 23:29:53,969 - INFO - Step 1: Fetching macro data from FRED...
+2025-08-10 23:29:54,700 - INFO - Fetched CPI (CPIAUCSL) rows=426
+2025-08-10 23:29:55,328 - INFO - Fetched CoreCPI (CPILFESL) rows=426
+2025-08-10 23:29:55,949 - INFO - Fetched PCE (PCEPI) rows=426
+2025-08-10 23:29:56,634 - INFO - Fetched CorePCE (PCEPILFE) rows=426
+2025-08-10 23:29:58,088 - INFO - Fetched BreakevenInfl_5Y (T5YIE) rows=5897
+2025-08-10 23:29:59,600 - INFO - Fetched BreakevenInfl_10Y (T10YIE) rows=5897
+2025-08-10 23:30:00,120 - INFO - Fetched GDP (GDPC1) rows=142
+2025-08-10 23:30:00,581 - INFO - Fetched GDPNow (GDPNOW) rows=57
+2025-08-10 23:30:01,215 - INFO - Fetched IndustrialProd (INDPRO) rows=426
+2025-08-10 23:30:01,837 - INFO - Fetched CapacityUtil (TCU) rows=426
+2025-08-10 23:30:02,574 - INFO - Fetched RetailSales (RSAFS) rows=402
+2025-08-10 23:30:03,245 - INFO - Fetched PersonalIncome (PI) rows=426
+2025-08-10 23:30:03,948 - INFO - Fetched PersonalConsumption (PCE) rows=426
+2025-08-10 23:30:04,648 - INFO - Fetched Unemp (UNRATE) rows=427
+2025-08-10 23:30:05,294 - INFO - Fetched Payrolls (PAYEMS) rows=427
+2025-08-10 23:30:06,166 - INFO - Fetched InitialClaims (ICSA) rows=1857
+2025-08-10 23:30:07,097 - INFO - Fetched ContinuingClaims (CCSA) rows=1856
+2025-08-10 23:30:07,774 - INFO - Fetched LaborForcePartic (CIVPART) rows=427
+2025-08-10 23:30:08,419 - INFO - Fetched AvgHourlyEarnings (CES0500000003) rows=233
+2025-08-10 23:30:09,035 - INFO - Fetched JOLTS (JTSJOL) rows=295
+2025-08-10 23:30:09,642 - INFO - Fetched HousingStarts (HOUST) rows=426
+2025-08-10 23:30:10,284 - INFO - Fetched BuildingPermits (PERMIT) rows=426
+2025-08-10 23:30:10,759 - INFO - Fetched ExistingHomeSales (EXHOSLUSM495S) rows=14
+2025-08-10 23:30:11,414 - INFO - Fetched CaseShiller (CSUSHPISA) rows=425
+2025-08-10 23:30:12,096 - INFO - Fetched M2 (M2SL) rows=426
+2025-08-10 23:30:12,994 - INFO - Fetched CommercialBankCredit (TOTBKCR) rows=1857
+2025-08-10 23:30:13,757 - INFO - Fetched ConsumerCredit (TOTALSL) rows=426
+2025-08-10 23:30:15,932 - INFO - Fetched FEDFUNDS (DFF) rows=13003
+2025-08-10 23:30:17,601 - INFO - Fetched DGS3MO (DGS3MO) rows=9289
+2025-08-10 23:30:19,352 - INFO - Fetched DGS2 (DGS2) rows=9289
+2025-08-10 23:30:20,971 - INFO - Fetched DGS5 (DGS5) rows=9289
+2025-08-10 23:30:22,685 - INFO - Fetched DGS10 (DGS10) rows=9289
+2025-08-10 23:30:24,432 - INFO - Fetched DGS30 (DGS30) rows=9289
+2025-08-10 23:30:25,852 - INFO - Fetched TIPS10 (DFII10) rows=5896
+2025-08-10 23:30:27,480 - INFO - Fetched AAA_spread (BAMLC0A0CM) rows=7559
+2025-08-10 23:30:29,035 - INFO - Fetched BBB_spread (BAMLC0A4CBBB) rows=7559
+2025-08-10 23:30:30,606 - INFO - Fetched HY_spread (BAMLH0A0HYM2) rows=7559
+2025-08-10 23:30:32,262 - INFO - Fetched TED_spread (TEDRATE) rows=8365
+2025-08-10 23:30:34,047 - INFO - Fetched VIX (VIXCLS) rows=9288
+2025-08-10 23:30:34,668 - INFO - Fetched ConsumerSentiment (UMCSENT) rows=426
+2025-08-10 23:30:35,353 - INFO - Fetched PMI_Manufacturing (MANEMP) rows=427
+2025-08-10 23:30:36,792 - INFO - Fetched DXY (DTWEXBGS) rows=5110
+2025-08-10 23:30:38,666 - INFO - Fetched WTI (DCOILWTICO) rows=9286
+2025-08-10 23:30:39,211 - WARNING - Failed to fetch Gold (GOLDAMGBD228NLBM): Bad Request.  The series does not exist.
+2025-08-10 23:30:39,410 - WARNING - Failed to fetch: ['Gold']
+2025-08-10 23:30:39,410 - INFO - Step 2: Fetching market data...
+2025-08-10 23:30:40,101 - INFO - Step 3: Engineering features...
+2025-08-10 23:30:40,193 - INFO - Step 4: Extracting dynamic factors...
+2025-08-10 23:30:40,204 - INFO - Step 5: Preparing VAR dataset...
+2025-08-10 23:30:40,211 - INFO - Step 6: Fitting VAR models...
+2025-08-10 23:30:40,213 - INFO - Using Bayesian VAR with Minnesota prior...
+2025-08-10 23:30:40,213 - ERROR - Pipeline failed: 'BayesianVAR' object has no attribute '_make_lagged_matrix'
+Traceback (most recent call last):
+  File "C:\Users\GegaMukhigulashvili\AppData\Local\Temp\ipykernel_7996\4290608769.py", line 11, in main
+    results = pipeline.run()
+              ^^^^^^^^^^^^^^
+  File "C:\Users\GegaMukhigulashvili\AppData\Local\Temp\ipykernel_7996\1003188023.py", line 99, in run
+    var_res = var_model.fit(var_df.values)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GegaMukhigulashvili\AppData\Local\Temp\ipykernel_7996\57263437.py", line 17, in fit
+    Yt, X = self._make_lagged_matrix(Y, p)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BayesianVAR' object has no attribute '_make_lagged_matrix'
+2025-08-10 23:32:27,963 - INFO - ==================================================
+2025-08-10 23:32:27,963 - INFO - Starting Enhanced Macro-Financial VAR Pipeline
+2025-08-10 23:32:27,963 - INFO - ==================================================
+2025-08-10 23:32:27,963 - INFO - Step 1: Fetching macro data from FRED...
+2025-08-10 23:32:29,206 - INFO - Fetched CPI (CPIAUCSL) rows=426
+2025-08-10 23:32:29,841 - INFO - Fetched CoreCPI (CPILFESL) rows=426
+2025-08-10 23:32:30,463 - INFO - Fetched PCE (PCEPI) rows=426
+2025-08-10 23:32:31,092 - INFO - Fetched CorePCE (PCEPILFE) rows=426
+2025-08-10 23:32:32,480 - INFO - Fetched BreakevenInfl_5Y (T5YIE) rows=5897
+2025-08-10 23:32:33,993 - INFO - Fetched BreakevenInfl_10Y (T10YIE) rows=5897
+2025-08-10 23:32:34,533 - INFO - Fetched GDP (GDPC1) rows=142
+2025-08-10 23:32:35,001 - INFO - Fetched GDPNow (GDPNOW) rows=57
+2025-08-10 23:32:35,684 - INFO - Fetched IndustrialProd (INDPRO) rows=426
+2025-08-10 23:32:36,321 - INFO - Fetched CapacityUtil (TCU) rows=426
+2025-08-10 23:32:36,886 - INFO - Fetched RetailSales (RSAFS) rows=402
+2025-08-10 23:32:37,494 - INFO - Fetched PersonalIncome (PI) rows=426
+2025-08-10 23:32:38,153 - INFO - Fetched PersonalConsumption (PCE) rows=426
+2025-08-10 23:32:38,785 - INFO - Fetched Unemp (UNRATE) rows=427
+2025-08-10 23:32:39,400 - INFO - Fetched Payrolls (PAYEMS) rows=427
+2025-08-10 23:32:40,285 - INFO - Fetched InitialClaims (ICSA) rows=1857
+2025-08-10 23:32:41,186 - INFO - Fetched ContinuingClaims (CCSA) rows=1856
+2025-08-10 23:32:41,788 - INFO - Fetched LaborForcePartic (CIVPART) rows=427
+2025-08-10 23:32:42,278 - INFO - Fetched AvgHourlyEarnings (CES0500000003) rows=233
+2025-08-10 23:32:42,817 - INFO - Fetched JOLTS (JTSJOL) rows=295
+2025-08-10 23:32:43,437 - INFO - Fetched HousingStarts (HOUST) rows=426
+2025-08-10 23:32:44,051 - INFO - Fetched BuildingPermits (PERMIT) rows=426
+2025-08-10 23:32:44,502 - INFO - Fetched ExistingHomeSales (EXHOSLUSM495S) rows=14
+2025-08-10 23:32:45,124 - INFO - Fetched CaseShiller (CSUSHPISA) rows=425
+2025-08-10 23:32:45,851 - INFO - Fetched M2 (M2SL) rows=426
+2025-08-10 23:32:46,887 - INFO - Fetched CommercialBankCredit (TOTBKCR) rows=1857
+2025-08-10 23:32:47,506 - INFO - Fetched ConsumerCredit (TOTALSL) rows=426
+2025-08-10 23:32:49,760 - INFO - Fetched FEDFUNDS (DFF) rows=13003
+2025-08-10 23:32:51,498 - INFO - Fetched DGS3MO (DGS3MO) rows=9289
+2025-08-10 23:32:53,348 - INFO - Fetched DGS2 (DGS2) rows=9289
+2025-08-10 23:32:55,097 - INFO - Fetched DGS5 (DGS5) rows=9289
+2025-08-10 23:32:57,001 - INFO - Fetched DGS10 (DGS10) rows=9289
+2025-08-10 23:32:58,949 - INFO - Fetched DGS30 (DGS30) rows=9289
+2025-08-10 23:33:00,470 - INFO - Fetched TIPS10 (DFII10) rows=5896
+2025-08-10 23:33:02,042 - INFO - Fetched AAA_spread (BAMLC0A0CM) rows=7559
+2025-08-10 23:33:03,558 - INFO - Fetched BBB_spread (BAMLC0A4CBBB) rows=7559
+2025-08-10 23:33:05,134 - INFO - Fetched HY_spread (BAMLH0A0HYM2) rows=7559
+2025-08-10 23:33:06,859 - INFO - Fetched TED_spread (TEDRATE) rows=8365
+2025-08-10 23:33:08,707 - INFO - Fetched VIX (VIXCLS) rows=9288
+2025-08-10 23:33:09,366 - INFO - Fetched ConsumerSentiment (UMCSENT) rows=426
+2025-08-10 23:33:09,979 - INFO - Fetched PMI_Manufacturing (MANEMP) rows=427
+2025-08-10 23:33:11,344 - INFO - Fetched DXY (DTWEXBGS) rows=5110
+2025-08-10 23:33:13,237 - INFO - Fetched WTI (DCOILWTICO) rows=9286
+2025-08-10 23:33:13,745 - WARNING - Failed to fetch Gold (GOLDAMGBD228NLBM): Bad Request.  The series does not exist.
+2025-08-10 23:33:13,936 - WARNING - Failed to fetch: ['Gold']
+2025-08-10 23:33:13,936 - INFO - Step 2: Fetching market data...
+2025-08-10 23:33:14,734 - INFO - Step 3: Engineering features...
+2025-08-10 23:33:14,836 - INFO - Step 4: Extracting dynamic factors...
+2025-08-10 23:33:14,850 - INFO - Step 5: Preparing VAR dataset...
+2025-08-10 23:33:14,858 - INFO - Step 6: Fitting VAR models...
+2025-08-10 23:33:14,858 - INFO - Using Bayesian VAR with Minnesota prior...
+2025-08-10 23:33:14,861 - INFO - Y shape: (2358, 13), lags: 4
+2025-08-10 23:33:14,863 - INFO - Yt shape: (2354, 13), X shape: (2354, 53)
+2025-08-10 23:33:14,876 - INFO - Step 7: Identifying regimes...
+2025-08-10 23:33:15,807 - INFO - Y shape: (543, 13), lags: 4
+2025-08-10 23:33:15,807 - INFO - Yt shape: (539, 13), X shape: (539, 53)
+2025-08-10 23:33:15,817 - INFO - Y shape: (1782, 13), lags: 4
+2025-08-10 23:33:15,817 - INFO - Yt shape: (1778, 13), X shape: (1778, 53)
+2025-08-10 23:33:15,826 - INFO - Step 8: Computing IRFs with confidence bands...
+2025-08-10 23:33:17,709 - INFO - Step 9: Setting up nowcasting...
+2025-08-10 23:33:17,728 - ERROR - Pipeline failed: Found array with 0 sample(s) (shape=(0, 4)) while a minimum of 1 is required by ElasticNet.
+Traceback (most recent call last):
+  File "C:\Users\GegaMukhigulashvili\AppData\Local\Temp\ipykernel_7996\4290608769.py", line 11, in main
+    results = pipeline.run()
+              ^^^^^^^^^^^^^^
+  File "C:\Users\GegaMukhigulashvili\AppData\Local\Temp\ipykernel_7996\1003188023.py", line 129, in run
+    nowcaster.fit(high_freq_data, low_freq_target)
+  File "C:\Users\GegaMukhigulashvili\AppData\Local\Temp\ipykernel_7996\2187889576.py", line 28, in fit
+    self.model.fit(X, y)
+  File "D:\Anaconda\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\site-packages\sklearn\linear_model\_coordinate_descent.py", line 982, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\site-packages\sklearn\utils\validation.py", line 2961, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\site-packages\sklearn\utils\validation.py", line 1370, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\site-packages\sklearn\utils\validation.py", line 1130, in check_array
+    raise ValueError(
+ValueError: Found array with 0 sample(s) (shape=(0, 4)) while a minimum of 1 is required by ElasticNet.
+2025-08-10 23:37:12,464 - INFO - ==================================================
+2025-08-10 23:37:12,467 - INFO - Starting Enhanced Macro-Financial VAR Pipeline
+2025-08-10 23:37:12,468 - INFO - ==================================================
+2025-08-10 23:37:12,468 - INFO - Step 1: Fetching macro data from FRED...
+2025-08-10 23:37:13,227 - INFO - Fetched CPI (CPIAUCSL) rows=426
+2025-08-10 23:37:13,848 - INFO - Fetched CoreCPI (CPILFESL) rows=426
+2025-08-10 23:37:14,448 - INFO - Fetched PCE (PCEPI) rows=426
+2025-08-10 23:37:15,039 - INFO - Fetched CorePCE (PCEPILFE) rows=426
+2025-08-10 23:37:16,466 - INFO - Fetched BreakevenInfl_5Y (T5YIE) rows=5897
+2025-08-10 23:37:17,941 - INFO - Fetched BreakevenInfl_10Y (T10YIE) rows=5897
+2025-08-10 23:37:18,453 - INFO - Fetched GDP (GDPC1) rows=142
+2025-08-10 23:37:18,935 - INFO - Fetched GDPNow (GDPNOW) rows=57
+2025-08-10 23:37:19,542 - INFO - Fetched IndustrialProd (INDPRO) rows=426
+2025-08-10 23:37:20,160 - INFO - Fetched CapacityUtil (TCU) rows=426
+2025-08-10 23:37:20,737 - INFO - Fetched RetailSales (RSAFS) rows=402
+2025-08-10 23:37:21,402 - INFO - Fetched PersonalIncome (PI) rows=426
+2025-08-10 23:37:22,017 - INFO - Fetched PersonalConsumption (PCE) rows=426
+2025-08-10 23:37:22,628 - INFO - Fetched Unemp (UNRATE) rows=427
+2025-08-10 23:37:23,217 - INFO - Fetched Payrolls (PAYEMS) rows=427
+2025-08-10 23:37:24,157 - INFO - Fetched InitialClaims (ICSA) rows=1857
+2025-08-10 23:37:25,186 - INFO - Fetched ContinuingClaims (CCSA) rows=1856
+2025-08-10 23:37:25,867 - INFO - Fetched LaborForcePartic (CIVPART) rows=427
+2025-08-10 23:37:26,483 - INFO - Fetched AvgHourlyEarnings (CES0500000003) rows=233
+2025-08-10 23:37:27,068 - INFO - Fetched JOLTS (JTSJOL) rows=295
+2025-08-10 23:37:27,706 - INFO - Fetched HousingStarts (HOUST) rows=426
+2025-08-10 23:37:28,373 - INFO - Fetched BuildingPermits (PERMIT) rows=426
+2025-08-10 23:37:28,849 - INFO - Fetched ExistingHomeSales (EXHOSLUSM495S) rows=14
+2025-08-10 23:37:29,616 - INFO - Fetched CaseShiller (CSUSHPISA) rows=425
+2025-08-10 23:37:30,267 - INFO - Fetched M2 (M2SL) rows=426
+2025-08-10 23:37:31,178 - INFO - Fetched CommercialBankCredit (TOTBKCR) rows=1857
+2025-08-10 23:37:31,923 - INFO - Fetched ConsumerCredit (TOTALSL) rows=426
+2025-08-10 23:37:33,957 - INFO - Fetched FEDFUNDS (DFF) rows=13003
+2025-08-10 23:37:35,777 - INFO - Fetched DGS3MO (DGS3MO) rows=9289
+2025-08-10 23:37:37,519 - INFO - Fetched DGS2 (DGS2) rows=9289
+2025-08-10 23:37:39,422 - INFO - Fetched DGS5 (DGS5) rows=9289
+2025-08-10 23:37:41,197 - INFO - Fetched DGS10 (DGS10) rows=9289
+2025-08-10 23:37:43,057 - INFO - Fetched DGS30 (DGS30) rows=9289
+2025-08-10 23:37:44,541 - INFO - Fetched TIPS10 (DFII10) rows=5896
+2025-08-10 23:37:46,192 - INFO - Fetched AAA_spread (BAMLC0A0CM) rows=7559
+2025-08-10 23:37:47,867 - INFO - Fetched BBB_spread (BAMLC0A4CBBB) rows=7559
+2025-08-10 23:37:49,597 - INFO - Fetched HY_spread (BAMLH0A0HYM2) rows=7559
+2025-08-10 23:37:51,291 - INFO - Fetched TED_spread (TEDRATE) rows=8365
+2025-08-10 23:37:53,096 - INFO - Fetched VIX (VIXCLS) rows=9288
+2025-08-10 23:37:53,737 - INFO - Fetched ConsumerSentiment (UMCSENT) rows=426
+2025-08-10 23:37:54,361 - INFO - Fetched PMI_Manufacturing (MANEMP) rows=427
+2025-08-10 23:37:55,707 - INFO - Fetched DXY (DTWEXBGS) rows=5110
+2025-08-10 23:37:57,457 - INFO - Fetched WTI (DCOILWTICO) rows=9286
+2025-08-10 23:37:57,996 - WARNING - Failed to fetch Gold (GOLDAMGBD228NLBM): Bad Request.  The series does not exist.
+2025-08-10 23:37:58,176 - WARNING - Failed to fetch: ['Gold']
+2025-08-10 23:37:58,176 - INFO - Step 2: Fetching market data...
+2025-08-10 23:37:58,870 - INFO - Step 3: Engineering features...
+2025-08-10 23:37:58,957 - INFO - Step 4: Extracting dynamic factors...
+2025-08-10 23:37:58,972 - INFO - Step 5: Preparing VAR dataset...
+2025-08-10 23:37:58,977 - INFO - Step 6: Fitting VAR models...
+2025-08-10 23:37:58,980 - INFO - Using Bayesian VAR with Minnesota prior...
+2025-08-10 23:37:58,980 - INFO - Y shape: (2358, 13), lags: 4
+2025-08-10 23:37:58,982 - INFO - Yt shape: (2354, 13), X shape: (2354, 53)
+2025-08-10 23:37:59,043 - INFO - Step 7: Identifying regimes...
+2025-08-10 23:37:59,297 - INFO - Y shape: (543, 13), lags: 4
+2025-08-10 23:37:59,297 - INFO - Yt shape: (539, 13), X shape: (539, 53)
+2025-08-10 23:37:59,299 - INFO - Y shape: (1782, 13), lags: 4
+2025-08-10 23:37:59,307 - INFO - Yt shape: (1778, 13), X shape: (1778, 53)
+2025-08-10 23:37:59,317 - INFO - Step 8: Computing IRFs with confidence bands...
+2025-08-10 23:38:01,018 - INFO - Step 9: Setting up nowcasting...
+2025-08-10 23:38:01,018 - INFO - High-freq columns: ['CPI_YoY', 'Payrolls_YoY', 'InitialClaims', 'RetailSales_YoY']
+2025-08-10 23:38:01,018 - INFO - Low-freq index: DatetimeIndex(['1990-07-02', '1990-07-03', '1990-07-04', '1990-07-05',
+               '1990-07-06'],
+              dtype='datetime64[ns]', freq='B')
+2025-08-10 23:38:01,018 - INFO - High-freq index: DatetimeIndex(['1990-01-01', '1990-01-02', '1990-01-03', '1990-01-04',
+               '1990-01-05'],
+              dtype='datetime64[ns]', freq='B')
+2025-08-10 23:38:01,038 - INFO - Aligned shape before dropna: (9160, 5)
+2025-08-10 23:38:01,047 - INFO - Aligned head:
+            CPI_YoY  Payrolls_YoY  InitialClaims  RetailSales_YoY  \
+1990-07-02      NaN           NaN            NaN              NaN   
+1990-07-03      NaN           NaN            NaN              NaN   
+1990-07-04      NaN           NaN            NaN              NaN   
+1990-07-05      NaN           NaN            NaN              NaN   
+1990-07-06      NaN           NaN            NaN              NaN   
+
+            GDP_Growth_q  
+1990-07-02     -0.000213  
+1990-07-03     -0.000213  
+1990-07-04     -0.000213  
+1990-07-05     -0.000213  
+1990-07-06     -0.000213  
+2025-08-10 23:38:01,047 - ERROR - Aligned DataFrame is empty after dropna. Check index alignment or data availability.
+2025-08-10 23:38:01,049 - ERROR - Pipeline failed: No overlapping data after alignment. Check high_freq and low_freq indices.
+Traceback (most recent call last):
+  File "C:\Users\GegaMukhigulashvili\AppData\Local\Temp\ipykernel_7996\4290608769.py", line 11, in main
+    results = pipeline.run()
+              ^^^^^^^^^^^^^^
+  File "C:\Users\GegaMukhigulashvili\AppData\Local\Temp\ipykernel_7996\1003188023.py", line 129, in run
+    nowcaster.fit(high_freq_data, low_freq_target)
+  File "C:\Users\GegaMukhigulashvili\AppData\Local\Temp\ipykernel_7996\2424441101.py", line 30, in fit
+    raise ValueError("No overlapping data after alignment. Check high_freq and low_freq indices.")
+ValueError: No overlapping data after alignment. Check high_freq and low_freq indices.
+2025-08-10 23:39:12,803 - INFO - ==================================================
+2025-08-10 23:39:12,805 - INFO - Starting Enhanced Macro-Financial VAR Pipeline
+2025-08-10 23:39:12,806 - INFO - ==================================================
+2025-08-10 23:39:12,807 - INFO - Step 1: Fetching macro data from FRED...
+2025-08-10 23:39:13,787 - INFO - Fetched CPI (CPIAUCSL) rows=426
+2025-08-10 23:39:14,460 - INFO - Fetched CoreCPI (CPILFESL) rows=426
+2025-08-10 23:39:15,053 - INFO - Fetched PCE (PCEPI) rows=426
+2025-08-10 23:39:15,651 - INFO - Fetched CorePCE (PCEPILFE) rows=426
+2025-08-10 23:39:17,100 - INFO - Fetched BreakevenInfl_5Y (T5YIE) rows=5897
+2025-08-10 23:39:18,556 - INFO - Fetched BreakevenInfl_10Y (T10YIE) rows=5897
+2025-08-10 23:39:19,128 - INFO - Fetched GDP (GDPC1) rows=142
+2025-08-10 23:39:19,577 - INFO - Fetched GDPNow (GDPNOW) rows=57
+2025-08-10 23:39:20,197 - INFO - Fetched IndustrialProd (INDPRO) rows=426
+2025-08-10 23:39:20,807 - INFO - Fetched CapacityUtil (TCU) rows=426
+2025-08-10 23:39:21,419 - INFO - Fetched RetailSales (RSAFS) rows=402
+2025-08-10 23:39:22,021 - INFO - Fetched PersonalIncome (PI) rows=426
+2025-08-10 23:39:22,643 - INFO - Fetched PersonalConsumption (PCE) rows=426
+2025-08-10 23:39:23,286 - INFO - Fetched Unemp (UNRATE) rows=427
+2025-08-10 23:39:23,972 - INFO - Fetched Payrolls (PAYEMS) rows=427
+2025-08-10 23:39:24,884 - INFO - Fetched InitialClaims (ICSA) rows=1857
+2025-08-10 23:39:26,062 - INFO - Fetched ContinuingClaims (CCSA) rows=1856
+2025-08-10 23:39:26,785 - INFO - Fetched LaborForcePartic (CIVPART) rows=427
+2025-08-10 23:39:27,297 - INFO - Fetched AvgHourlyEarnings (CES0500000003) rows=233
+2025-08-10 23:39:27,858 - INFO - Fetched JOLTS (JTSJOL) rows=295
+2025-08-10 23:39:28,495 - INFO - Fetched HousingStarts (HOUST) rows=426
+2025-08-10 23:39:29,149 - INFO - Fetched BuildingPermits (PERMIT) rows=426
+2025-08-10 23:39:29,618 - INFO - Fetched ExistingHomeSales (EXHOSLUSM495S) rows=14
+2025-08-10 23:39:30,267 - INFO - Fetched CaseShiller (CSUSHPISA) rows=425
+2025-08-10 23:39:30,866 - INFO - Fetched M2 (M2SL) rows=426
+2025-08-10 23:39:31,771 - INFO - Fetched CommercialBankCredit (TOTBKCR) rows=1857
+2025-08-10 23:39:32,429 - INFO - Fetched ConsumerCredit (TOTALSL) rows=426
+2025-08-10 23:39:34,437 - INFO - Fetched FEDFUNDS (DFF) rows=13003
+2025-08-10 23:39:36,346 - INFO - Fetched DGS3MO (DGS3MO) rows=9289
+2025-08-10 23:39:38,107 - INFO - Fetched DGS2 (DGS2) rows=9289
+2025-08-10 23:39:39,977 - INFO - Fetched DGS5 (DGS5) rows=9289
+2025-08-10 23:39:41,891 - INFO - Fetched DGS10 (DGS10) rows=9289
+2025-08-10 23:39:43,841 - INFO - Fetched DGS30 (DGS30) rows=9289
+2025-08-10 23:39:45,246 - INFO - Fetched TIPS10 (DFII10) rows=5896
+2025-08-10 23:39:46,790 - INFO - Fetched AAA_spread (BAMLC0A0CM) rows=7559
+2025-08-10 23:39:48,308 - INFO - Fetched BBB_spread (BAMLC0A4CBBB) rows=7559
+2025-08-10 23:39:49,959 - INFO - Fetched HY_spread (BAMLH0A0HYM2) rows=7559
+2025-08-10 23:39:51,680 - INFO - Fetched TED_spread (TEDRATE) rows=8365
+2025-08-10 23:39:53,441 - INFO - Fetched VIX (VIXCLS) rows=9288
+2025-08-10 23:39:54,079 - INFO - Fetched ConsumerSentiment (UMCSENT) rows=426
+2025-08-10 23:39:54,677 - INFO - Fetched PMI_Manufacturing (MANEMP) rows=427
+2025-08-10 23:39:56,049 - INFO - Fetched DXY (DTWEXBGS) rows=5110
+2025-08-10 23:39:57,912 - INFO - Fetched WTI (DCOILWTICO) rows=9286
+2025-08-10 23:39:58,374 - WARNING - Failed to fetch Gold (GOLDAMGBD228NLBM): Bad Request.  The series does not exist.
+2025-08-10 23:39:58,551 - WARNING - Failed to fetch: ['Gold']
+2025-08-10 23:39:58,553 - INFO - Step 2: Fetching market data...
+2025-08-10 23:39:59,237 - INFO - Step 3: Engineering features...
+2025-08-10 23:39:59,328 - INFO - Step 4: Extracting dynamic factors...
+2025-08-10 23:39:59,347 - INFO - Step 5: Preparing VAR dataset...
+2025-08-10 23:39:59,350 - INFO - Step 6: Fitting VAR models...
+2025-08-10 23:39:59,352 - INFO - Using Bayesian VAR with Minnesota prior...
+2025-08-10 23:39:59,352 - INFO - Y shape: (2358, 13), lags: 4
+2025-08-10 23:39:59,356 - INFO - Yt shape: (2354, 13), X shape: (2354, 53)
+2025-08-10 23:39:59,367 - INFO - Step 7: Identifying regimes...
+2025-08-10 23:39:59,627 - INFO - Y shape: (543, 13), lags: 4
+2025-08-10 23:39:59,627 - INFO - Yt shape: (539, 13), X shape: (539, 53)
+2025-08-10 23:39:59,631 - INFO - Y shape: (1782, 13), lags: 4
+2025-08-10 23:39:59,631 - INFO - Yt shape: (1778, 13), X shape: (1778, 53)
+2025-08-10 23:39:59,639 - INFO - Step 8: Computing IRFs with confidence bands...
+2025-08-10 23:40:01,078 - INFO - Step 9: Setting up nowcasting...
+2025-08-10 23:40:01,097 - ERROR - Pipeline failed: No overlapping data after alignment. Check high_freq and low_freq indices.
+Traceback (most recent call last):
+  File "C:\Users\GegaMukhigulashvili\AppData\Local\Temp\ipykernel_7996\4290608769.py", line 11, in main
+    results = pipeline.run()
+              ^^^^^^^^^^^^^^
+  File "C:\Users\GegaMukhigulashvili\AppData\Local\Temp\ipykernel_7996\1003188023.py", line 129, in run
+    nowcaster.fit(high_freq_data, low_freq_target)
+  File "C:\Users\GegaMukhigulashvili\AppData\Local\Temp\ipykernel_7996\3015923939.py", line 25, in fit
+    raise ValueError("No overlapping data after alignment. Check high_freq and low_freq indices.")
+ValueError: No overlapping data after alignment. Check high_freq and low_freq indices.
+2025-08-11 13:22:48,077 - INFO - ==================================================
+2025-08-11 13:22:48,080 - INFO - Starting Enhanced Macro-Financial VAR Pipeline
+2025-08-11 13:22:48,081 - INFO - ==================================================
+2025-08-11 13:22:48,082 - INFO - Step 1: Fetching macro data from FRED...
+2025-08-11 13:22:49,033 - INFO - Fetched CPI (CPIAUCSL) rows=426
+2025-08-11 13:22:49,566 - INFO - Fetched CoreCPI (CPILFESL) rows=426
+2025-08-11 13:22:50,055 - INFO - Fetched PCE (PCEPI) rows=426
+2025-08-11 13:22:50,588 - INFO - Fetched CorePCE (PCEPILFE) rows=426
+2025-08-11 13:22:53,072 - INFO - Fetched BreakevenInfl_5Y (T5YIE) rows=5897
+2025-08-11 13:27:06,405 - INFO - ==================================================
+2025-08-11 13:27:06,406 - INFO - Starting Enhanced Macro-Financial VAR Pipeline
+2025-08-11 13:27:06,407 - INFO - ==================================================
+2025-08-11 13:27:06,409 - INFO - Step 1: Fetching macro data from FRED...
+2025-08-11 13:27:07,417 - INFO - Fetched CPI (CPIAUCSL) rows=426
+2025-08-11 13:27:07,924 - INFO - Fetched CoreCPI (CPILFESL) rows=426
+2025-08-11 13:27:08,492 - INFO - Fetched PCE (PCEPI) rows=426
+2025-08-11 13:27:09,057 - INFO - Fetched CorePCE (PCEPILFE) rows=426
+2025-08-11 13:27:10,833 - INFO - Fetched BreakevenInfl_5Y (T5YIE) rows=5897
+2025-08-11 13:27:12,330 - INFO - Fetched BreakevenInfl_10Y (T10YIE) rows=5897
+2025-08-11 13:27:12,788 - INFO - Fetched GDP (GDPC1) rows=142
+2025-08-11 13:27:13,177 - INFO - Fetched GDPNow (GDPNOW) rows=57
+2025-08-11 13:27:13,825 - INFO - Fetched IndustrialProd (INDPRO) rows=426
+2025-08-11 13:27:14,409 - INFO - Fetched CapacityUtil (TCU) rows=426
+2025-08-11 13:27:15,039 - INFO - Fetched RetailSales (RSAFS) rows=402
+2025-08-11 13:27:15,659 - INFO - Fetched PersonalIncome (PI) rows=426
+2025-08-11 13:27:16,229 - INFO - Fetched PersonalConsumption (PCE) rows=426
+2025-08-11 13:27:16,980 - INFO - Fetched Unemp (UNRATE) rows=427
+2025-08-11 13:27:17,540 - INFO - Fetched Payrolls (PAYEMS) rows=427
+2025-08-11 13:27:18,473 - INFO - Fetched InitialClaims (ICSA) rows=1857
+2025-08-11 13:27:19,464 - INFO - Fetched ContinuingClaims (CCSA) rows=1856
+2025-08-11 13:27:20,011 - INFO - Fetched LaborForcePartic (CIVPART) rows=427
+2025-08-11 13:27:20,432 - INFO - Fetched AvgHourlyEarnings (CES0500000003) rows=233
+2025-08-11 13:27:20,979 - INFO - Fetched JOLTS (JTSJOL) rows=295
+2025-08-11 13:27:21,469 - INFO - Fetched HousingStarts (HOUST) rows=426
+2025-08-11 13:27:22,044 - INFO - Fetched BuildingPermits (PERMIT) rows=426
+2025-08-11 13:27:22,512 - INFO - Fetched ExistingHomeSales (EXHOSLUSM495S) rows=14
+2025-08-11 13:27:23,065 - INFO - Fetched CaseShiller (CSUSHPISA) rows=425
+2025-08-11 13:27:23,629 - INFO - Fetched M2 (M2SL) rows=426
+2025-08-11 13:27:24,547 - INFO - Fetched CommercialBankCredit (TOTBKCR) rows=1857
+2025-08-11 13:27:25,163 - INFO - Fetched ConsumerCredit (TOTALSL) rows=426
+2025-08-11 13:27:28,111 - INFO - Fetched FEDFUNDS (DFF) rows=13003
+2025-08-11 13:27:30,561 - INFO - Fetched DGS3MO (DGS3MO) rows=9289
+2025-08-11 13:27:33,097 - INFO - Fetched DGS2 (DGS2) rows=9289
+2025-08-11 13:27:35,446 - INFO - Fetched DGS5 (DGS5) rows=9289
+2025-08-11 13:27:37,707 - INFO - Fetched DGS10 (DGS10) rows=9289
+2025-08-11 13:27:40,916 - INFO - Fetched DGS30 (DGS30) rows=9289
