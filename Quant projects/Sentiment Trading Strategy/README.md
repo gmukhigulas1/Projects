@@ -26,6 +26,3 @@ Sentiment Trading Strategy/
 ├── notebooks/
 ├── outputs/
 └── README.md
-- `Realistic_Returns.png`
-- `Chart3_Cumulative_Returns.png`
-- `Annual_Performance_Analysis.png`
