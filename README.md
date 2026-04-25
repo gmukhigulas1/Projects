@@ -1,5 +1,5 @@
 # Finance, Quantitative Research, and Valuation Projects
-This repository contains my self-directed projects in quantitative finance, financial modeling, market analysis, macroeconomic research, and sentiment-based trading. The goal of the repository is to document my development in finance, programming, and empirical market research through practical projects built mainly in Python/Jupyter Notebook and Excel.
+This repository contains my self-directed projects in quantitative finance, financial modeling, market analysis, macroeconomic research, and sentiment-based trading. This repository documents my development in finance, programming, and empirical market research through practical projects built mainly in Python/Jupyter Notebook and Excel.
 
 My work is organized into three main areas:
 
