@@ -17,24 +17,5 @@ There are also broader files such as:
 - `Data Centers.xlsx`
 - `Inv.xlsx`
 
-## What I usually focus on
-
-Depending on the company, the models may include:
-
-- historical financial statement data;
-- revenue and margin assumptions;
-- free cash flow estimates;
-- DCF-style valuation logic;
-- hurdle-rate or discount-rate thinking;
-- scenario assumptions;
-- notes on business drivers, risks, and valuation sensitivity.
-
-## How to review this folder
-
-The best way to review this folder is not to open every file. I would start with one or two larger company models, then compare them with a sector file such as `SaaS.xlsx`, `Tech.xlsx`, or `Data Centers.xlsx`.
-
-This folder is a modeling archive, not a finished investment-research product. I keep it because it shows how I think through companies, assumptions, and valuation from the ground up.
-
-## Disclaimer
-
-These models are for educational and research purposes only. They are not investment advice.
+## Note
+This folder is not a finished investment-research product. I keep it because it shows how I think through companies, assumptions, and valuation from the ground up.
