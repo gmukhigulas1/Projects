@@ -25,7 +25,6 @@ The workflow is roughly:
 - `Combine.ipynb` and `CombineWithTicker.ipynb` — merging datasets and mapping discussion data to tickers
 - `VisualSentiment.ipynb` and `Visualizing.ipynb` — sentiment charts and exploratory analysis
 - `WeightTesting.ipynb` — testing different weighting approaches
-- `Model.ipynb` — main modeling / strategy notebook
 - `GitLab.ipynb` — company-specific example
 
 ## Main output files
