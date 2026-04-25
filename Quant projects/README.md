@@ -8,31 +8,32 @@ Some notebooks are connected to coursework, especially discrete-time and continu
 ## Folder guide
 
 ### `Sentiment Trading Strategy/`
-This is the main research project in the folder. It is connected to my bachelor’s thesis on Reddit sentiment and investment decisions. The project looks at whether online discussion data can be converted into sentiment and engagement signals and then tested against market performance.
+This is the main research project in the folder. It is connected to my bachelor’s thesis, **“The Rise of Reddit in Investment Decisions: A Sentiment-Based Trading Perspective.”**
 
-### `Portfolio/`
-Portfolio-analysis notebooks. These are used to practice return calculation, diversification, volatility, correlation, and allocation logic.
+The project looks at whether Reddit discussion data can be turned into sentiment and engagement signals and then tested against market returns. It includes notebooks for data collection, cleaning, ticker mapping, sentiment visualization, weighting, and strategy testing.
 
-### `Stocks/`
-Exploratory stock-market notebooks and scripts. This includes moving-average backtesting, trendline automation, higher-high/lower-low logic, sentiment strategy testing, and Markowitz-style analysis.
+### `Portfolio and risk/`
+Portfolio and risk-analysis notebooks. These are used to practice return calculation, volatility, diversification, allocation logic, and value-at-risk.
 
-### `Macro/` and `Econs/`
-Macroeconomic and economic-data analysis notebooks. These folders include work with public macro datasets, CPI/fiscal/world economic outlook-style data, banking indicators, and related CSV files.
+### `Asset Pricing Coursework/`
+Coursework and self-study notebooks in mathematical finance, including binomial trees, discrete-time finance, continuous-time finance, and Python implementation of finance concepts.
 
-### `FIM/`
-Finance and Information Management exercises, including a binomial-tree notebook and introductory Python work.
+### `Market Analysis/`
+Exploratory stock-market notebooks and small Python scripts. This folder includes work on moving-average backtesting, trendline automation, high/low price-structure logic, simple sentiment strategy testing, and other market-analysis tools.
 
-### Course notebooks
-The folder also includes notebooks such as:
+### `Economics/`
+Economics and macro-data exercises. This folder includes notebooks and datasets related to macroeconomic indicators, banking/monetary data, CPI, fiscal data, and world economic outlook-style datasets.
 
-- `Discrete Time Finance 1.ipynb`
-- `Discrete Time Finance 2.ipynb`
-- `Continuous Time Finance 1.ipynb`
-- `Continuous Time Finance 2.ipynb`
-- `VaR 12-13-25 Lecture.ipynb`
+## How I would review this folder
 
-These notebooks are mainly coursework and self-study material where I implemented or practiced mathematical finance concepts in Python.
+If you only have limited time, I would review the folder in this order:
+
+1. `Sentiment Trading Strategy/`
+2. `Asset Pricing Coursework/`
+3. `Market Analysis/`
+4. `Portfolio and risk/`
+5. `Economics/`
 
 ## Current state
 
-This is a working folder. Some notebooks are polished enough to read directly, while others are still closer to study notes or experiments.
+This is a working portfolio folder. Some notebooks are developed projects, while others are closer to study notes or experiments. I keep both types because they show the process of learning quantitative finance by implementing ideas directly in Python.
