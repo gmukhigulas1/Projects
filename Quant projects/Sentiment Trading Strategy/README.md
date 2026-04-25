@@ -18,25 +18,14 @@ The workflow is roughly:
 6. test simple strategy rules;
 7. visualize annual, cumulative, and adjusted returns.
 
-## Main notebooks
+## Folder structure
 
-- `Reddit.ipynb` — Reddit-data workflow and processing
-- `Pulling.ipynb` — data pulling / collection workflow
-- `Combine.ipynb` and `CombineWithTicker.ipynb` — merging datasets and mapping discussion data to tickers
-- `VisualSentiment.ipynb` and `Visualizing.ipynb` — sentiment charts and exploratory analysis
-- `WeightTesting.ipynb` — testing different weighting approaches
-- `GitLab.ipynb` — company-specific example
-
-## Main output files
-
-Some of the output files include:
-
-- `daily_weighted_sentiment.csv`
-- `momentum_strategy_results.csv`
-- `adjusted_momentum_strategy_results.csv`
-- `annual_strategy_performance.csv`
-- `compound_model_combined_results.csv`
-- `FinalReturns.png`
+```text
+Sentiment Trading Strategy/
+├── data/
+├── notebooks/
+├── outputs/
+└── README.md
 - `Realistic_Returns.png`
 - `Chart3_Cumulative_Returns.png`
 - `Annual_Performance_Analysis.png`
