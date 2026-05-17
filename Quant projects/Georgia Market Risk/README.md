@@ -1,5 +1,11 @@
-# Georgia Cross-Asset Risk Index
+# Georgian Equities Factor Attribution Dashboard
 
-This project builds a cross-asset market risk dataset for Georgia and the surrounding region. The goal is to combine currency data, sovereign and corporate bond prices, ICE government bond indices, local interest rates, equities, commodities, crypto assets, and global benchmark yields into one structured research dataset.
+This project studies Georgian-linked equities listed on the London Stock Exchange: Lion Finance Group, formerly Bank of Georgia, ticker BGEO.L; TBC Bank, ticker TBCG.L; and Georgia Capital, ticker CGEO.L.
 
-The final objective is to study how Georgian financial-market risk behaves across different asset classes and whether stress signals can be detected using correlation analysis, rolling volatility, yield changes, sovereign bond spreads, and CUSUM-style regime detection.
+The analysis builds a common Georgian equity factor using PCA and studies what drives its movement across global equities, US Treasury rates, regional markets, local currency, commodities, crypto, credit instruments, and trading volumes.
+
+The dashboard combines factor attribution, Lasso-based same-day diagnostics, Ridge-based next-day prediction checks, CUSUM event filtering, and stress simulation. The main conclusion is that same-day factor attribution is meaningful, while next-day prediction remains weak.
+
+Live dashboard:
+
+[Georgian Equities Dashboard](https://georgian-equities-dashboard-gmukhigulas1s-projects.vercel.app/)
