@@ -1,0 +1,54 @@
+{
+  "title": "Stress Simulation",
+  "subtitle": "Model-implied sensitivity to selected macro factor shocks",
+  "model_note": "Scenario impacts use Lasso sensitivities from the same-day diagnostic model. This is a historical sensitivity estimate, not a forecast or trading signal.",
+  "shock_unit": "standard deviations",
+  "target_unit": "daily return",
+  "factors": [
+    {
+      "label": "Global equities",
+      "prefix": "GLOBAL_EQUITY_RISK",
+      "sensitivity_per_1sd": 0.015654685165286408,
+      "abs_sensitivity": 0.015654685165286408,
+      "importance_share": 0.6285792146266204,
+      "positive_coef_sum": 0.015654685165286408,
+      "negative_coef_sum": 0.0
+    },
+    {
+      "label": "Regional equities",
+      "prefix": "REGIONAL_EQUITY",
+      "sensitivity_per_1sd": 0.006558091311761157,
+      "abs_sensitivity": 0.006558091311761157,
+      "importance_share": 0.26332563335974773,
+      "positive_coef_sum": 0.006558091311761157,
+      "negative_coef_sum": 0.0
+    },
+    {
+      "label": "US Treasury rates",
+      "prefix": "GLOBAL_RATES",
+      "sensitivity_per_1sd": 0.0026920959734126047,
+      "abs_sensitivity": 0.0026920959734126047,
+      "importance_share": 0.10809515201363187,
+      "positive_coef_sum": 0.0026920959734126047,
+      "negative_coef_sum": 0.0
+    }
+  ],
+  "cusum_state": {
+    "date": "2026-05-08",
+    "positive_accumulator": 0.0,
+    "negative_accumulator": -0.018063871264974052,
+    "positive_threshold": 0.037203083910583724,
+    "negative_threshold": -0.037203083910583724
+  },
+  "default_shocks": {
+    "Global equities": -1.0,
+    "US Treasury rates": 0.0,
+    "Regional equities": -0.5
+  },
+  "slider": {
+    "min": -3.0,
+    "max": 3.0,
+    "step": 0.25
+  },
+  "important_interpretation_note": "US Treasury rates refers to the PCA rates factor, not a raw yield change. A negative shock means the rates factor falls, which may not always mean raw yields fall. Interpret the sign through the model sensitivity and PCA construction."
+}
