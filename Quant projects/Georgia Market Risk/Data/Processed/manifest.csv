@@ -1,12 +1,2 @@
 dataset,file,start_date,end_date,rows,columns,missing_values
-FX,Data\Processed\FX.csv,2018-01-01,2026-05-08,2174,7,0
-currencies,Data\Processed\currencies.csv,2018-01-01,2026-05-08,2174,10,0
-TIBR,Data\Processed\TIBR.csv,2018-01-03,2026-05-07,2081,4,888
-cryptos,Data\Processed\cryptos.csv,2018-01-01,2026-05-08,3050,3,830
-commodities,Data\Processed\commodities.csv,2018-01-02,2026-05-08,2102,3,3
-yields,Data\Processed\yields.csv,2018-01-02,2026-05-08,2099,3,0
-all_market_usd,Data\Processed\all_market_usd.csv,2018-01-01,2026-05-08,2174,13,1191
-bond_prices_filled,Data\Processed\bond_prices_filled.csv,2018-01-01,2026-05-08,2186,16,11912
-bond_yields_pct,Data\Processed\bond_yields_pct.csv,2018-01-01,2026-05-08,2186,16,11912
-ice_tri_levels,Data\Processed\ice_tri_levels.csv,2016-05-06,2026-05-08,2617,12,19206
-ice_price_levels,Data\Processed\ice_price_levels.csv,2016-05-06,2026-05-08,2617,12,19210
+market_volumes,Data\Processed\market_volumes.csv,2018-05-29,2026-05-08,1816,17,0
